@@ -22,9 +22,6 @@
         <ngx-datatable-column *ngFor="let column of columns;
         let i = index;" name="{{column.name}}"
                               prop="{{column.prop}}" sortable="true">
-<!--            <mat-form-field>-->
-                <input [(ngModel)]="column.prop" [disabled]="false">
-<!--            </mat-form-field>-->
         </ngx-datatable-column>
 
         <ngx-datatable-column name="" sortable="true" prop="Id">

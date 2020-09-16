@@ -28,9 +28,7 @@ export class AppComponent {
       'row-class-suspended': row.suspended == true,
     };
   }
-  editUser(i) {
 
-  }
   deleteUser(i) {
     this.rows.splice(i,1);
     this.rows = [...this.rows];
