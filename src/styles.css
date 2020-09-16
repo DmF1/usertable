@@ -1,0 +1,29 @@
+.datatable-header-inner{
+    background-color: #a3e6f4;
+}
+
+.datatable-body-row {
+    background-color: #dbf5fb;
+}
+
+.datatable-row-wrapper {
+    border-bottom: 4px solid white;
+}
+
+.datatable-scroller {
+    width: 100% !important;
+}
+
+.empty-button {
+    background-color: #dbf5fb;
+    border: none;
+}
+
+.empty-button:active{
+    background-color: #dbf5fb;
+    border: none;
+}
+
+.row-class-suspended {
+    opacity: 30%;
+}

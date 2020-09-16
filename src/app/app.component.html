@@ -1,0 +1,64 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+<style>
+  :host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+</style>
+
+<div>
+    <ngx-datatable class="material" [rows]="rows" [columns]="columns"
+                   [selectionType]="SelectionType.checkbox"
+                   [selectAllRowsOnPage]="false"
+                   [rowClass]="getRowClass">
+
+        <ngx-datatable-column *ngFor="let column of columns;
+        let i = index;" name="{{column.name}}"
+                              prop="{{column.prop}}" sortable="true">
+<!--            <mat-form-field>-->
+                <input [(ngModel)]="column.prop" [disabled]="false">
+<!--            </mat-form-field>-->
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="" sortable="true" prop="Id">
+            <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex"
+                         ngx-datatable-cell-template>
+                <button class="empty-button">
+                    <i class="material-icons edit">edit</i>
+                    Edit User
+                </button>
+            </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="" sortable="true" prop="Id">
+            <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex"
+                         ngx-datatable-cell-template>
+                <button class="empty-button" (click)="suspendUser(rowIndex)">
+                    <i class="material-icons ">remove_circle</i>
+                    {{row.suspended === false ? 'Suspend User' : 'Restore User'}}
+                </button>
+            </ng-template>
+        </ngx-datatable-column>
+
+        <ngx-datatable-column name="" sortable="true" prop="Id">
+            <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex"
+                         ngx-datatable-cell-template>
+                <button class="empty-button" (click)="deleteUser(rowIndex)">
+                    <i class="material-icons delete">delete</i>
+                    Delete User
+                </button>
+            </ng-template>
+        </ngx-datatable-column>
+
+    </ngx-datatable>
+
+
+</div>
+
